@@ -1,0 +1,40 @@
+@use '../abstract/variable'as v;
+@use '../abstract/mixin'as m;
+
+.p-home {
+    &__principal {
+        background-color: v.$white;
+        padding: 2rem;
+
+
+        @include m.screen('table') {
+            padding: 10rem;
+            margin-top: -10rem;
+            position: relative;
+        }
+    }
+
+    &__icon {
+        margin-top: 5rem;
+
+    }
+
+    &__listIcons {
+        @include m.screen('table') {
+            @include m.grid(3,2rem);
+        }
+        li {
+            p {
+                font-family: v.$font-tertiary;
+                font-size: 3rem;
+                color: v.$primary;
+            }
+            img{
+                margin: 0 auto;
+                width: 12rem;
+            }
+        }
+
+    }
+
+}

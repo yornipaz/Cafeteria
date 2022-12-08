@@ -1,0 +1,73 @@
+@use 'abstract/variable'as v;
+@use 'abstract/mixin'as m;
+
+.header {
+    padding: 5rem 0;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include m.screen('table') {
+        min-height: 70rem;
+    }
+
+    &__content {
+        margin: 5rem;
+    }
+
+    @include m.screen('table') {
+        padding: 2rem 0;
+    }
+
+    &__stick {
+        display: flex;
+        flex-direction: column;
+
+        @include m.screen('table') {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+    }
+
+    &__logo {
+        width: 50%;
+        margin: 0 auto;
+
+        @include m.screen('table') {
+            width: 20rem;
+            margin: 0;
+        }
+    }
+
+    &::before {
+        content: '';
+        background-color: v.$black;
+        position: absolute;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: .5;
+
+
+    }
+
+    &--home {
+        background-image: url('../img/header_inicio.jpg');
+    }
+
+    &__title {
+        h1 {
+            text-align: center;
+            color: v.$white;
+            text-transform: uppercase;
+            margin-top: 5rem;
+            @include m.screen('table'){
+                margin-top: 10rem;
+            }
+        }
+    }
+
+}

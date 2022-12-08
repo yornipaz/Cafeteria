@@ -41,3 +41,13 @@ h2 {
 h3 {
     font-size: 3.2rem;
 }
+.title--white{
+    @extend h2;
+    color: v.$white;
+    span{
+        color:v.$white
+    }
+    &::after{
+        display: none;
+    }
+}

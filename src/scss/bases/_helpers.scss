@@ -29,9 +29,14 @@
     margin-top: 5rem;
 }
 
+.mt-n-10 {
+    margin-top: -10rem;
+}
+
 .overflow-hidden {
     overflow: hidden;
 }
+
 // color, background and border styles helpers
 
 @include m.generate-color('primary', v.$primary);
@@ -40,4 +45,3 @@
 @include m.generate-color('white', v.$white);
 @include m.generate-color('light-grey', v.$light-grey);
 @include m.generate-color('light-blue', v.$light-blue);
-

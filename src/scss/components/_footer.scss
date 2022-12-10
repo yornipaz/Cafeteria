@@ -1,8 +1,46 @@
 @use 'abstract/variable'as v;
 @use 'abstract/mixin'as m;
-.footer{
+
+.footer {
     background-color: v.$primary;
-    &__container{
-        
-    } 
+
+    &__container {
+        max-width: 120rem;
+        width: 95%;
+        margin: 0 auto;
+    }
+
+    &__content {
+        padding: 5rem;
+
+        @include m.screen('table') {
+            @include m.grid(3, 2rem);
+        }
+    }
+
+    &__box {
+        font-family: v.$font-tertiary;
+        text-align: center;
+
+        h3 {
+            font-family: v.$font-tertiary;
+            margin: 0 0 1rem 0;
+            font-size: 2.4rem;
+            color: v.$secondary;
+        }
+
+        a,
+        p {
+
+            font-size: 2rem;
+            margin: 0;
+        }
+    }
+
+    &__copyright {
+        text-align: center;
+        margin: 0;
+        padding: 2rem;
+        color: v.$white;
+    }
 }

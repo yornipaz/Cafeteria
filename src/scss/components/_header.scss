@@ -6,6 +6,7 @@
     position: relative;
     background-repeat: no-repeat;
     background-size: cover;
+
     @include m.screen('table') {
         min-height: 70rem;
     }
@@ -58,13 +59,18 @@
         background-image: url('../img/header_inicio.jpg');
     }
 
+    &--about {
+        background-image: url('../img/header_nosotros.jpg');
+    }
+
     &__title {
         h1 {
             text-align: center;
             color: v.$white;
             text-transform: uppercase;
             margin-top: 5rem;
-            @include m.screen('table'){
+
+            @include m.screen('table') {
                 margin-top: 10rem;
             }
         }

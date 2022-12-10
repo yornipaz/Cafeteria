@@ -1,0 +1,65 @@
+@use '../abstract/variable'as v;
+@use '../abstract/mixin'as m;
+
+.p-process {
+    &__principal {
+        background-color: v.$white;
+        padding: 2rem;
+
+
+        @include m.screen('table') {
+            padding: 10rem;
+            margin-top: -10rem;
+            position: relative;
+        }
+    }
+
+    &__content {
+        margin-bottom: 3rem;
+
+        @include m.screen('table') {
+            display: flex;
+            align-items: center;
+
+            gap: 5rem;
+        }
+
+    
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+        &:nth-child(even) {
+            .p-process__text {
+                order: -1;
+            }
+
+          
+        }
+    }
+
+    &__text,
+    &__image {
+        flex: 1;
+    }
+
+    &__text {
+
+        margin-top: 1rem;
+
+        h3 {
+            margin: 0;
+            text-align: left;
+            color: v.$primary;
+
+            &::after {
+                content: '';
+                display: block;
+                height: 5px;
+                width: 50%;
+                background-color: v.$secondary;
+
+            }
+        }
+    }
+}

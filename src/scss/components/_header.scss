@@ -65,6 +65,15 @@
     &--process{
         background-image: url('../img/header_proceso.jpg');
     }
+    &--menu{
+        background-image: url('../img/header_menu.jpg');
+    }
+    &--gallery{
+        background-image: url('../img/header_galeria.jpg'); 
+    }
+    &--contact{
+        background-image: url('../img/header_contacto.jpg');   
+    }
 
     &__title {
         h1 {

@@ -1,0 +1,42 @@
+@use '../abstract/variable'as v;
+@use '../abstract/mixin'as m;
+
+.p-menu {
+    &__principal {
+        background-color: v.$white;
+        padding: 2rem;
+
+
+        @include m.screen('table') {
+            padding: 10rem;
+            padding-bottom: 0;
+            margin-top: -10rem;
+            position: relative;
+        }
+    }
+
+    &__content {
+        background-image: url('../../img/cafe.jpg');
+        background-repeat: no-repeat;
+        background-position: center bottom;
+        background-size: 100%;
+        aspect-ratio: 3 / 6;
+
+        @include m.screen('smartphones') {
+            aspect-ratio: 3 / 4;
+        }
+
+        @include m.screen('table') {
+            @include m.grid(2, 5rem);
+            aspect-ratio: 16 / 6;
+            background-size: 40%;
+            background-position: bottom right;
+        }
+    }
+
+    &__text {
+        p {
+            font-size: 2rem;
+        }
+    }
+}

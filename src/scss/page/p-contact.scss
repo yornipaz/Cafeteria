@@ -1,0 +1,27 @@
+@use '../abstract/variable'as v;
+@use '../abstract/mixin'as m;
+
+.p-contact {
+    &__principal {
+        background-color: v.$white;
+        padding: 2rem;
+
+
+        @include m.screen('table') {
+            padding: 10rem;
+            margin-top: -10rem;
+            position: relative;
+        }
+    }
+
+    &__content {
+        @include m.screen('table') {
+            @include m.grid(2, 5rem);
+            background-image: url('../../img/granos_cafe.jpg');
+            background-repeat: no-repeat;
+            background-position: right center;
+            background-size: 50%;
+        }
+    }
+
+}

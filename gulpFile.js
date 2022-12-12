@@ -15,21 +15,25 @@ const avif = require('gulp-avif');
 
 function css() {
     return src('src/scss/main.scss')
+    .pipe( sourcemaps.init() )
         .pipe(sass())
-        .pipe(postcss([autoprefixer()]))
+        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(sourcemaps.write('.'))
         .pipe(dest('dist/css'))
 
 
 } function pagesCss() {
     return src('src/scss/page/*.scss')
+        .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(postcss([autoprefixer()]))
+        .pipe(postcss([autoprefixer(), cssnano()]))
+        .pipe(sourcemaps.write('.'))
         .pipe(dest('dist/css/pages'))
 }
 
 function dev() {
     watch('src/scss/**/*.scss', css);
-    watch('src/scss/page/*.scss',pagesCss);
+    watch('src/scss/page/*.scss', pagesCss);
     watch('src/img/**/*', image);
 }
 function versionWebp() {

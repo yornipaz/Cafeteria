@@ -13,7 +13,6 @@
             position: relative;
         }
     }
-
     &__content {
         @include m.screen('table') {
             @include m.grid(2, 2rem);

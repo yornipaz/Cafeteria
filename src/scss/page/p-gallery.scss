@@ -1,0 +1,16 @@
+@use '../abstract/variable'as v;
+@use '../abstract/mixin'as m;
+
+.p-gallery {
+    &__principal {
+        background-color: v.$white;
+        padding: 2rem;
+
+
+        @include m.screen('table') {
+            padding: 10rem;
+            margin-top: -10rem;
+            position: relative;
+        }
+    }
+}
